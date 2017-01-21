@@ -5,8 +5,6 @@ $file = file_get_contents('mergedoc.rtf');
 // To temporary get rid of the escape characters...
 $mergetext = str_replace("\\", "€€", $file); 
 
-// The five-part regex expression (carefully crafted) :-)
-// $regex = '/<<((?:€€[a-z0-9]*|\}|\{|\s)*)([a-z0-9.\-\+_æøåÆØÅA-Z]*)((?:€€[a-z0-9]*|\}|\{|\s)*)([a-z0-9.\-\+_æøåÆØÅA-Z]*)((?:€€[a-z0-9]+|\}|\{|\s)*)>>/'; 
 // New seven part regex with default value detection
 $regex2 = '/<<((?:€€[a-z0-9]*|\}|\{|\s)*)([a-z0-9.\-\+_æøåÆØÅA-Z]*)((?:€€[a-z0-9]*|\}|\{|\s)*)([a-z0-9.\-\+_æøåÆØÅA-Z]*)((?:€€[a-z0-9]*|\}|\{|\s)*)(?:\s*:(.*?)\s*)?((?:€€[a-z0-9]*|\}|\{|\s)*)>>/';
 
